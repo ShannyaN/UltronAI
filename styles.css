@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: black;
+}
+iframe {
+    width: 700px;
+    height: 700px;
+    border: 0px;
+    border-radius: 15px;
+    margin:50px; 
+}
+h1{
+    color: white;
+    display: inline-flex;
+}
+.content {
+    width: 100%;
+    text-align: center;
+}

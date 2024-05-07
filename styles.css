@@ -9,8 +9,8 @@ body {
     background-color: black;
 }
 iframe {
-    width: 700px;
-    height: 600px;
+    width: 95vw;
+    height: 100vh;
     border: 0px;
     border-radius: 15px;
     margin:50px; 

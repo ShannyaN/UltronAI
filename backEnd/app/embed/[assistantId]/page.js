@@ -19,36 +19,8 @@ function Embed({ params: { assistantId } }) {
     intervalRef.current = runInterval
     const chatRef = useRef(null)
     chatRef.current = chat
-    const [time, setTime]=useState("time")
- 
 
-    
-    document.addEventListener('DOMContentLoaded', function() {
-        const clockElement = document.getElementById('clock');
-
-        const updateClock = () => {
-            const now = new Date();
-            const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-            const dayOfWeek = daysOfWeek[now.getDay()];
-            const date = now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-            const hours = now.getHours().toString().padStart(2, '0');
-            const minutes = now.getMinutes().toString().padStart(2, '0');
-            const seconds = now.getSeconds().toString().padStart(2, '0');
-            const timeString = `${dayOfWeek}, ${date}, ${hours}:${minutes}:${seconds}`;
-
-            clockElement.textContent = timeString;
-        };
-
-        // Update clock initially
-        updateClock();
-
-        // Update clock every second
-        setInterval(updateClock, 1000);
-    });
-
-
-    //displayDateTime();
-
+   
     const refreshChat = () => {
         setChat((prev)=>[])
         setThread((prev)=>null)

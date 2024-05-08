@@ -99,7 +99,7 @@ function Embed({ params: { assistantId } }) {
         // You can process the formData as needed before sending it to the AI
     
         // Assuming you need to send a specific question to the AI, you can define it here
-        const question = "Please set my schedule for the following week. Thank me for letting you know what I have going on, repeat it back to me, and ask how you can help me plan my day.";
+        const question = "Please set my schedule for the following week. Thank me for letting you know what I have going on, repeat it back to me, and ask how you can help me plan my day. Remember my schedule for the entirety of our conversation." + JSON.stringify(formData);
     
         // Send the question to the AI
         //let chatList = [...chatRef.current, { isBot: false, msg: question }];

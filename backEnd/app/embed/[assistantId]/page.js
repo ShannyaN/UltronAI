@@ -319,5 +319,3 @@ function Embed({ params: { assistantId } }) {
 }
 
 export default Embed;
-"
-}"

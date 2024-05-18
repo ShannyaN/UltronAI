@@ -19,3 +19,9 @@
 .bounce1 { animation-delay: 0; }
 .bounce2 { animation-delay: .3s; }
 .bounce3 { animation-delay: .6s; }
+
+#clock {
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+    color: #333;
+}

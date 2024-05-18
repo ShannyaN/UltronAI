@@ -20,7 +20,29 @@ function Embed({ params: { assistantId } }) {
     const chatRef = useRef(null)
     chatRef.current = chat
 
-   
+    document.addEventListener('DOMContentLoaded', function() {
+        const clockElement = document.getElementById('clock');
+
+        const updateClock = () => {
+            const now = new Date();
+            const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const dayOfWeek = daysOfWeek[now.getDay()];
+            const date = now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            const timeString = `${dayOfWeek}, ${date}, ${hours}:${minutes}:${seconds}`;
+
+            clockElement.textContent = timeString;
+        };
+
+        // Update clock initially
+        updateClock();
+
+        // Update clock every second
+        setInterval(updateClock, 1000);
+    });
+
     const refreshChat = () => {
         setChat((prev)=>[])
         setThread((prev)=>null)
@@ -189,7 +211,7 @@ function Embed({ params: { assistantId } }) {
         <div className="h-screen w-screen md:p-4 flex flex-col bg-myBg gap-4">
  
             <h3 className="font-semibold text-center">Please enter your Schedule for the Following Week.</h3>
-            <div id="clock"><h2>hey sisters</h2></div>
+            <div id="clock"></div>
             <form onSubmit={handleSubmit} >
                 <div className="grid grid-cols-2 gap-4"></div>
                 <div className="flex items-center">
